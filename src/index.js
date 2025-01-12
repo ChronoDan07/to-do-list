@@ -18,14 +18,15 @@ class ProjectManager {
     }
 
     getTodaysTasks() {
-      const today = new Date().toISOString().split("T")[0];
+      const today = new Date();
+      const localDate = today.toLocaleDateString('en-CA');
       const tasksDueToday = [];
       
       this.projects.forEach(project => {
-        const tasks = project.tasks.filter(task => task.dueDate === today);
+        const tasks = project.tasks.filter(task => task.dueDate === localDate);
         tasksDueToday.push(...tasks);
       });
-
+    
       return tasksDueToday;
     }
 
