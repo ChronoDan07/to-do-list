@@ -563,7 +563,8 @@ class ProjectManager {
             const taskElement = e.target.closest('.task');
             if (taskElement && this.currentProject) {
               const taskId = taskElement.dataset.id;
-              this.currentProject.removeTask(taskId); 
+              this.currentProject.removeTask(taskId);
+              this.manager.saveProjects(); 
               this.renderProjectView(this.currentProject);
             }
           }); 
