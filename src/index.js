@@ -497,8 +497,8 @@ class ProjectManager {
                 task.description = document.getElementById('edit-task-description').value;
                 task.dueDate = document.getElementById('edit-task-due-date').value;
                 task.priority = document.getElementById('edit-task-priority').value;
-
                 this.manager.saveTaskEdit(task);
+                this.manager.saveProjects();
                 this.renderProjectView(this.currentProject);
                 editModal.classList.add('hidden');
               };
